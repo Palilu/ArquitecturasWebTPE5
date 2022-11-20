@@ -2,21 +2,22 @@ package edu.tudai.arquitecturaswebtpe3.controller;
 
 import edu.tudai.arquitecturaswebtpe3.domain.entity.Gender;
 import edu.tudai.arquitecturaswebtpe3.model.StudentAto;
-import edu.tudai.arquitecturaswebtpe3.service.StudentService;
-import org.springframework.beans.factory.annotation.Autowired;
+//import edu.tudai.arquitecturaswebtpe3.service.StudentService;
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 @RestController
 @RequestMapping("/v1/students/")
 public class StudentController {
 
-    @Autowired
-    private StudentService studentService;
+//    @Autowired
+//    private StudentService studentService;
 
     /**
      * a) dar de alta un estudiante
@@ -27,7 +28,8 @@ public class StudentController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public StudentAto createStudent(@RequestBody @Validated StudentAto studentAto) {
-        return studentService.createStudent(studentAto);
+        //return studentService.createStudent(studentAto);
+        return StudentAto.builder().build();
     }
 
     /**
@@ -53,16 +55,17 @@ public class StudentController {
                                         @RequestParam(required = false) Long careerId,
                                         @RequestParam(required = false) String city
                                         ) {
-        if (sortBy != null && direction != null) {
-            return studentService.getStudents(sortBy, direction);
-        } else if (studentId != null) {
-            return List.of(studentService.findByStudentId(studentId));
-        } else if (gender != null) {
-            return studentService.findByGender(gender);
-        } else if (careerId != null && city != null) {
-            return studentService.findByCareerAndCity(careerId, city);
-        } else {
-            return studentService.getStudents();
-        }
+//        if (sortBy != null && direction != null) {
+//            return studentService.getStudents(sortBy, direction);
+//        } else if (studentId != null) {
+//            return List.of(studentService.findByStudentId(studentId));
+//        } else if (gender != null) {
+//            return studentService.findByGender(gender);
+//        } else if (careerId != null && city != null) {
+//            return studentService.findByCareerAndCity(careerId, city);
+//        } else {
+//            return studentService.getStudents();
+//        }
+        return Collections.emptyList();
     }
 }
