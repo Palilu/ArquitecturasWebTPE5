@@ -4,7 +4,6 @@ import edu.tudai.arquitecturaswebtpe3.domain.entity.Gender;
 import edu.tudai.arquitecturaswebtpe3.model.StudentAto;
 //import edu.tudai.arquitecturaswebtpe3.service.StudentService;
 //import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -39,7 +38,6 @@ public class StudentController {
      * g) recuperar los estudiantes de una determinada carrera, filtrado por ciudad de residencia.
      *
      * @param sortBy
-     * @param direction
      * @param studentId
      * @param gender
      * @param careerId
@@ -49,7 +47,6 @@ public class StudentController {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<StudentAto> getStudents(@RequestParam(required = false) String sortBy,
-                                        @RequestParam(required = false) Sort.Direction direction,
                                         @RequestParam(required = false) Long studentId,
                                         @RequestParam(required = false) Gender gender,
                                         @RequestParam(required = false) Long careerId,

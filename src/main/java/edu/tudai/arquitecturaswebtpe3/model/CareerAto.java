@@ -1,6 +1,5 @@
 package edu.tudai.arquitecturaswebtpe3.model;
 
-import com.sun.istack.NotNull;
 import lombok.*;
 
 @Getter
@@ -14,6 +13,5 @@ public class CareerAto {
 
     private Long id;
 
-    @NotNull
     private String name;
 }
