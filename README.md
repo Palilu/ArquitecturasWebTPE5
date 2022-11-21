@@ -5,11 +5,9 @@ Seguimos usando [Proyecto Lombok](https://projectlombok.org/)
 
 Para esta entrega también usamos Spring Boot, JUnit y AssertJ para los tests
 
+Esta versión en particular es la entrega 3 adaptada a funcionar en Heroku con una base postgreSQL.
+
 ## Instrucciones de uso
 
-1. Bajar el código fuente: 'git clone https://github.com/Palilu/ArquitecturasWebTPE5.git'
-2. Ir a la carpeta root del proyecto: 'cd ArquitecturasWebTPE5'
-3. Compilarlo: `mvn clean install`
-4. Correrlo: `mvn spring-boot:run`
-5. Una vez que spring boot inicialice se puede probar desde [Swagger](http://localhost:8080/swagger-ui/)
+1. Visitar: https://arquitecturas-web-tpe-5.herokuapp.com/swagger-ui/
 
