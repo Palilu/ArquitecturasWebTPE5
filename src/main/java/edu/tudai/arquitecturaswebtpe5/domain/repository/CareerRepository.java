@@ -24,7 +24,7 @@ public interface CareerRepository extends JpaRepository<Career, Long> {
     /**
      * f) recuperar las carreras con estudiantes inscriptos, y ordenar por cantidad de inscriptos.
      */
-    @Query(" SELECT new com.heroku.tpe5.domain.dto.CareerCount(c.id, c.name, count(i)) " +
+    @Query(" SELECT new edu.tudai.arquitecturaswebtpe5.domain.dto.CareerCount(c.id, c.name, count(i)) " +
            " FROM Career c JOIN c.inscriptions i " +
            " GROUP BY c.id, c.name ORDER BY count(i) DESC")
     List<CareerCount> getCareersByInscriptions();
@@ -34,7 +34,7 @@ public interface CareerRepository extends JpaRepository<Career, Long> {
      *  inscriptos y egresados por año. Se deben ordenar las carreras alfabéticamente, y presentar
      *  los años de manera cronológica.
      */
-    @Query(" SELECT new com.heroku.tpe5.domain.dto.CareerReportRow(" +
+    @Query(" SELECT new edu.tudai.arquitecturaswebtpe5.domain.dto.CareerReportRow(" +
            "     c.id, " +
            "     c.name, " +
            "     YEAR(i.since), " +
